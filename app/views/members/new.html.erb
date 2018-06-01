@@ -1,0 +1,35 @@
+<div class="text-center">
+  <h1>新規メンバー登録</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_for(@member) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+
+      <div class="form-group">
+        <%= f.label :name, 'お名前' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :profile, '所属' %>
+        <%= f.select :profile, [["グループ1", "グループ1"], ["グループ2", "グループ2"], ["グループ3", "グループ3"], ["グループ4", "グループ4"],["グループ5", "グループ5"]], class:'form-control' %>
+      </div>
+      
+
+      <div class="form-group">
+        <%= f.label :password, 'Password' %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, 'Password(確認)' %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+
+      <%= f.submit '登録する', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>
