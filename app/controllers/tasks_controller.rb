@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :require_member_logged_in
-  before_action :correct_member, only: [:destroy]
+  before_action :correct_member
  
   def create
     @task = current_member.tasks.build(task_params)
